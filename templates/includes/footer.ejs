@@ -1,7 +1,17 @@
-<div class="site-footer">
-  <%- themeConfig.footerInfo %>
+<hr>
+<div class="footer-custom" id="footer">
+  <div class="slogan">
+    <% if (themeConfig.siteDescription) { %>
+      <%= themeConfig.siteDescription %>
+    <% } else { %>
+      Yet another blog driven by Gridea.
+    <% } %>
+  </div>
+  <div class="meta">
+    <% if (themeConfig.footerInfo) { %>
+      <p><%- themeConfig.footerInfo %></p>
+    <% } %>
+    <p>「<%= themeConfig.siteName %>」使用 <a href="https://gridea.dev/" target="_blank">Gridea</a> 和 <a href="https://github.com/Astrian/reflect-white-mweb-theme" target="_blank">Reflect White</a> 搭建。</p>
+    <!--p class='colorScheme'>色彩模式：<span id='colorSchemeLight' onclick="changeColorScheme('light');">明亮</span> &middot; <span id='colorSchemeDark' onclick="changeColorScheme('dark')">黑暗</span> &middot; <span id='colorSchemeSystem' onclick="changeColorScheme('system')">跟随系统</span></p-->
+  </div>
 </div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
