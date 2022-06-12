@@ -14,6 +14,11 @@ gulp.task('copy_media', () => {
     .pipe(gulp.dest('./media'))
 })
 
+gulp.task('copy_bulma', () => {
+  return gulp.src('./node_modules/bulma/css/bulma.min.css')
+    .pipe(gulp.dest('./styles'))
+})
+
 gulp.task('gulp_nodemon', () => {
   nodemon({
   script: 'app.js'                       // this is where my express server is
@@ -54,4 +59,4 @@ gulp.task('sync', () => {
 });
 
 // gulp.task('default', ['gulp_nodemon', 'sync'])
-gulp.task('default', gulp.parallel('gulp_nodemon', 'copy_media', 'less', 'sync'))
+gulp.task('default', gulp.parallel('gulp_nodemon', 'copy_media', 'copy_bulma', 'less', 'sync'))
