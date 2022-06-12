@@ -2,5 +2,13 @@
   "name": "Reflect White",
   "version": "1.0.0",
   "author": "Astrian Zheng",
-  "customConfig": []
+  "customConfig": [
+    {
+      "name": "twitter",
+      "label": "你的 Twitter 用户名",
+      "group": "主题设置",
+      "type": "input",
+      "note": "可在 Twitter 用户分享你的文章时附带你的 Twitter 帐户。留空关闭此功能。"
+    }
+  ]
 }
