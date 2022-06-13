@@ -1,39 +1,58 @@
 <% if (style === "card") { %>
-<% for (let i in posts) { %>
-<% if (i === "0") { %>
-
-<div class="article huge">
-  <% if (posts[i].feature) { %>
-  <div class="featureimg" style="background-image: url('<%= posts[i].feature %>')"></div>
-  <% } else { %>
-  <div class="featureimg" style="background-image: url('media/images/defaultfeaimg.jpg')"></div>
-  <% } %>
-  <div class="row content">
-    <div class="post">
-      <div class="headline"><a href="<%= posts[i].link %>">
-          <%= posts[i].title %>
-        </a></div>
-      <div class="meta">
-        <time><%= posts[i].dateFormat %></time>
-        <tags>
-          <% for (let j in posts[i].tags) { %>
-            <tag>
-              <a href="<%= posts[i].tags[j].link %>" class="tag-item">#<%= posts[i].tags[j].name %></a>
-            </tag>
-          <% } %>
-        </tags>
-      </div>
-      <div class="body">
-        <%- posts[i].abstract %>
-      </div>
-      <div class="extra">
-        <a href="<%= posts[i].link %>" class="continue">
-          继续阅读
-        </a>
+  <% for (let i in posts) { %>
+    <% if (i === "0") { %>
+    <div class="article huge">
+      <% if (posts[i].feature) { %>
+        <div class="featureimg" style="background-image: url('<%= posts[i].feature %>')"></div>
+      <% } else { %>
+        <div class="featureimg" style="background-image: url('/media/images/defaultfeaimg.jpg')"></div>
+      <% } %>
+      <div class="row content">
+        <div class="post">
+          <div class="headline"><a href="<%= posts[i].link %>">
+              <%= posts[i].title %>
+            </a></div>
+          <div class="meta">
+            <time><%= posts[i].dateFormat %></time>
+            <tags>
+              <% for (let j in posts[i].tags) { %>
+                <tag>
+                  <a href="<%= posts[i].tags[j].link %>" class="tag-item">#<%= posts[i].tags[j].name %></a>
+                </tag>
+              <% } %>
+            </tags>
+          </div>
+          <div class="body">
+            <%- posts[i].abstract %>
+          </div>
+          <div class="extra">
+            <a href="<%= posts[i].link %>" class="continue">
+              继续阅读
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="other-posts">
+    <% } else { %>
+      <div class="other-post">
+          <a href="<%= posts[i].link %>" class="item">
+            <div class="body">
+              <div class="articleinfo">
+                <div class="headline"><%= posts[i].title %></div>
+                <div class="digest"><%- posts[i].abstract %></div>
+                <time><%= posts[i].dateFormat %></time>
+              </div>
+              <% if (posts[i].feature) { %>
+                <div class="featimg" style="background-image: url('<%= posts[i].feature %>')"></div>
+              <% } else { %>
+                <div class="featimg" style="background-image: url('/media/images/defaultfeaimg.jpg')"></div>
+              <% } %>
+              
+            </div>
+          </a>
+        </div>
+    <% } %>
+  <% } %>
+<% } %>
 </div>
-<% } %>
-<% } %>
-<% } %>
