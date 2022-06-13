@@ -12,9 +12,9 @@
 
     <div class="article huge">
       <% if (post.feature) { %>
-        <div class="featureimg" style="background-image: url('<%= post.feature %>')"></div>
+      <div class="featureimg" style="background-image: url('<%= post.feature %>')"></div>
       <% } else { %>
-        <div class="featureimg" style="background-image: url('/media/images/defaultfeaimg.jpg')"></div>
+      <div class="featureimg" style="background-image: url('/media/images/defaultfeaimg.jpg')"></div>
       <% } %>
       <div class="row content">
         <div class="post">
@@ -25,15 +25,22 @@
             <time><%= post.dateFormat %></time>
             <tags>
               <% for (let i in post.tags) { %>
-                <tag>
-                  <a href="<%= post.tags[i].link %>" class="tag-item">#<%= post.tags[i].name %></a>
-                </tag>
+              <tag>
+                <a href="<%= post.tags[i].link %>" class="tag-item">#<%= post.tags[i].name %></a>
+              </tag>
               <% } %>
             </tags>
           </div>
           <div class="body">
             <%- post.content %>
           </div>
+          <% if (post.nextPost && !post.hideInList) { %>
+            <a class="next-post" href="<%= post.nextPost.link %>">
+              <span class="next-text">Next</span>
+              <span class="next-title"><%= post.nextPost.title %></span>
+              <span class="next-desc"><%- post.nextPost.abstract %></span>
+            </a>  
+          <% } %>
         </div>
       </div>
     </div>
