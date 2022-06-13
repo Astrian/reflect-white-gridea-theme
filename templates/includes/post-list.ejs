@@ -13,7 +13,16 @@
       <div class="headline"><a href="<%= posts[i].link %>">
           <%= posts[i].title %>
         </a></div>
-      <div class="meta"><span class="time"><%= posts[i].dateFormat %></span></div>
+      <div class="meta">
+        <time><%= posts[i].dateFormat %></time>
+        <tags>
+          <% for (let j in posts[i].tags) { %>
+            <tag>
+              <a href="<%= posts[i].tags[j].link %>" class="tag-item">#<%= posts[i].tags[j].name %></a>
+            </tag>
+          <% } %>
+        </tags>
+      </div>
       <div class="body">
         <%- posts[i].abstract %>
       </div>

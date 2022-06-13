@@ -69,10 +69,6 @@ body {
 			font-size: 35px;
 			a {
 				color: @color0;
-				&:hover {
-					color: @color0;
-					text-decoration: none;
-				}
 			}
 		}
 		.subtitle {
@@ -159,10 +155,14 @@ body {
 			color: @color5;
 			font-size: 14px;
 			margin-bottom: 8px;
+			display: flex;
+			flex-direction: column;
 			a {
 				color: @color5;
 				margin-right: 8px;
-				text-decoration: underline;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 		.tags {
@@ -180,6 +180,7 @@ body {
 		}
 		.body {
 			text-align: justify;
+			margin-top: 20px;
 			a {
 				color: @color6;
 			}
@@ -363,11 +364,11 @@ a {
 	.meta {
 		color: rgba(0, 0, 0, 0.3);
 		font-size: 14px;
+		a:hover {
+			text-decoration: underline;
+		}
 	}
-	a {
-		color: rgba(0, 0, 0, 0.3);
-		text-decoration: underline;
-	}
+	
 	.colorScheme {
 		cursor: default;
 		span {
