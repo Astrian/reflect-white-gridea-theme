@@ -1,18 +1,21 @@
 <!doctype html>
 <html lang="zh-cn">
-  <head>
-    <%- include('./includes/head', { pageTitle: themeConfig.siteName }) %>
-    <%- include('./includes/meta', { url: themeConfig.domain }) %>
-  </head>
-  <body>
-    <div class="container">
-      <%- include('./includes/header') %>
 
-      <%- include('./includes/post-list') %>
+<head>
+  <%- include('./includes/head', { pageTitle: themeConfig.siteName }) %>
+  <%- include('./includes/meta', { url: themeConfig.domain }) %>
+</head>
 
-      <%- include('./includes/pagination') %>
+<body>
+  <div class="container">
+    <%- include('./includes/header') %>
 
-      <%- include('./includes/footer') %>
-    </div>
-  </body>
+    <%- include('./includes/post-list', { style: "card" }) %>
+
+    <%- include('./includes/pagination') %>
+
+    <%- include('./includes/footer') %>
+  </div>
+</body>
+
 </html>
