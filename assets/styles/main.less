@@ -5,7 +5,7 @@
 @color3: #c5c5c5; // Appears 3 times
 @color4: #146679; // Appears 2 times
 @color5: #829ba1; // Appears 2 times
-@color6: #195e72; // Appears 2 times
+@color6: #378ca3; // Appears 2 times
 @color7: #181f20; // Appears 2 times
 @color8: #40b4d4; // Appears 2 times
 
@@ -124,6 +124,9 @@ body {
 				margin-top: 20px;
 				a {
 					color: @color6;
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 				sup {
 					a {
@@ -182,27 +185,19 @@ body {
 			margin-bottom: 8px;
 			display: flex;
 			flex-direction: column;
-			a {
-				color: @color5;
-				margin-right: 8px;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
-		}
-		.tags {
-			margin-bottom: 5px;
-			.item {
-				margin-right: 5px;
-				a {
-					color: rgba(20, 102, 121, 0.5);
-					font-size: 14px;
-					&:hover {
-						color: rgba(20, 102, 121, 0.5);
+			tags {
+				margin-bottom: 5px;
+				tag {
+					margin-right: 5px;
+					a {
+						color: @color5;
+						font-size: 14px;
+						text-decoration: underline;
 					}
 				}
 			}
 		}
+		
 		.extra {
 			margin-top: 20px;
 			display: flex;
