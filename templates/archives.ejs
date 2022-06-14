@@ -1,18 +1,22 @@
 <html>
-  <head>
-    <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <%- include('./includes/header') %>
-    
-        <%- include('./includes/post-list-archives') %>
-    
-        <%- include('./includes/pagination') %>
-    
-        <%- include('./includes/footer') %>
-      </div>
-    </div>
-  </body>
+<head>
+  <%- include('./includes/head', { pageTitle: `存档 - ${themeConfig.siteName}` }) %>
+  <%- include('./includes/meta', {
+    url: `${themeConfig.domain}/archives`,
+    title: "存档",
+    description: `${themeConfig.siteName} 的历史文章，尽收眼底。`,
+    cover: "nocover"
+  }) %>
+</head>
+<body>
+  <div class="container">
+    <%- include('./includes/header') %>
+
+    <%- include('./includes/post-list', { style: "card" }) %>
+
+    <%- include('./includes/pagination') %>
+
+    <%- include('./includes/footer') %>
+  </div>
+</body>
 </html>
