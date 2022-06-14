@@ -12,9 +12,34 @@
   <div class="container">
     <%- include('./includes/header') %>
 
-    <%- include('./includes/post-list', { style: "card" }) %>
-
-    <%- include('./includes/pagination') %>
+    <div class="archives">
+      <div class="archives-title">Archives</div>
+      <% 
+        let years = []
+        posts.forEach((item) => {
+          const year = item.date.substring(0, 4)
+          if (!years.includes(year)) {
+            years.push(year)
+          }
+        })
+      %>
+      <% years.forEach(function(year) { %>
+        <div class="year-session">
+          <div class="year-title"><%= year %></div>
+          <% posts.forEach(function(post) { %>
+            <%if (post.date.indexOf(year) !== -1) { %>
+              <article>
+                <a href="<%= post.link %>">
+                  <div class="title"><%= post.title %></div>
+                  <div class="description"><%- post.abstract %></div>
+                  <div class="date"><%= post.date %></div>
+                </a>
+              </article>
+            <% } %>
+          <% }) %>
+        </div>
+      <% }) %>
+    </div>
 
     <%- include('./includes/footer') %>
   </div>

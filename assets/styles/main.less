@@ -343,23 +343,51 @@ a {
 	}
 }
 .archives {
-	h1 {
-		small {
-			color: rgba(0, 0, 0, 0.5);
-			font-size: 20px;
+	.archives-title {
+		font-size: 60px;
+		letter-spacing: 6px;
+		color: rgba(0, 0, 0, 0.6);
+		font-variant-caps: small-caps;
+		font-weight: 100;
+	}
+	.year-session {
+		border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+		margin-bottom: 20px;
+		margin-top: 50px;
+		.year-title {
+			font-size: 40px;
+			color: rgba(0, 0, 0, 0.4);
+			margin-bottom: 20px;
+			letter-spacing: 2px;
 		}
-	}
-	.yeartitle {
-		margin-top: 32px;
-	}
-	article {
-		padding: 4px 0px;
-		a {
-			color: @color0;
+		article {
+			margin-bottom: 20px;
+			padding: 10px 0;
+			border-radius: 4px;
 			&:hover {
-				color: @color0;
-				text-decoration: none;
+				background-color: rgba(0, 0, 0, 0.05);
+				margin-left: -10px;
+				margin-right: -10px;
+				padding-left: 10px;
+				padding-right: 10px;
 			}
+			.title {
+				font-size: 20px;
+				color: @color0;
+				margin-bottom: 5px;
+			}
+			.description {
+				font-size: 16px;
+				color: rgba(0, 0, 0, 0.6);
+			}
+			.date {
+				margin-top: 2px;
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.4);
+			}
+		}
+		&:last-child {
+			border-bottom: none;
 		}
 	}
 }
