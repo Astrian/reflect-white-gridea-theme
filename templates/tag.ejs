@@ -14,7 +14,7 @@
     <%- include('./includes/header') %>
 
     <div id="tag">
-      <% let tagMeta = JSON.parse(site.customConfig.tagmeta ? site.customConfig.tagmeta : '{"Gridea": {"description": "This is the test description of a tag."}}') %>
+      <% let tagMeta = JSON.parse(site.customConfig.tagmeta ? site.customConfig.tagmeta : '{}') %>
       <div class="header">
         <div class="tag-title">#<%- tag.name %></div>
         <% if (tagMeta[tag.name]) {%>
@@ -27,7 +27,7 @@
           <article>
             <div class="left">
               <% if (posts[i].feature) { %>
-                <div class="featimg" style="background-image: url(')"></div>
+                <div class="featimg" style="background-image: url('<%= posts[i].feature %>')"></div>
               <% } else { %>
                 <div class="featimg" style="background-image: url('/media/images/defaultfeaimg.jpg')"></div>
               <% } %>
