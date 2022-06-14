@@ -41,6 +41,10 @@
               <span class="next-desc"><%- post.nextPost.abstract %></span>
             </a>  
           <% } %>
+          
+          <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+              <%- include('./includes/comments') %>
+          <% } %>
         </div>
       </div>
     </div>

@@ -9,6 +9,12 @@
       "group": "主题设置",
       "type": "input",
       "note": "可在 Twitter 用户分享你的文章时附带你的 Twitter 帐户。留空关闭此功能。"
+    },
+    {
+      "name": "commentcode",
+      "label": "评论工具代码",
+      "group": "主题设置",
+      "type": "textarea"
     }
   ]
 }
