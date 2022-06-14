@@ -1,20 +1,55 @@
-<html>
-  <head>
-  <%- include('./includes/head', { siteTitle: `${tag.name} | ${themeConfig.siteName}` }) %>
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <%- include('./includes/header') %>
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：#<%= tag.name %>
-            </h2> 
-        </div>
-        <%- include('./includes/post-list') %>
-        <%- include('./includes/pagination') %>
-        <%- include('./includes/footer') %>
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <%- include('./includes/head', { pageTitle: `#${tag.name} - ${themeConfig.siteName}` }) %>
+  <%- include('./includes/meta', {
+    url: `${themeConfig.domain}/tag/${tag.slug}`,
+    title: "标签",
+    description: `${themeConfig.siteName} 中，与 #${tag.name} 有关的文章。`,
+    cover: "nocover"
+  }) %>
+</head>
+<body>
+  <div class="container">
+    <%- include('./includes/header') %>
+
+    <div id="tag">
+      <% let tagMeta = JSON.parse(site.customConfig.tagmeta ? site.customConfig.tagmeta : '{"Gridea": {"description": "This is the test description of a tag."}}') %>
+      <div class="header">
+        <div class="tag-title">#<%- tag.name %></div>
+        <% if (tagMeta[tag.name]) {%>
+        <div class="tag-description"><%- tagMeta[tag.name].description %></div>
+        <% } %>
       </div>
+      <div class="tag-content">
+        <% for (let i in posts) { %>
+        <a href="<%- posts[i].url %>">
+          <article>
+            <div class="left">
+              <% if (posts[i].feature) { %>
+                <div class="featimg" style="background-image: url(')"></div>
+              <% } else { %>
+                <div class="featimg" style="background-image: url('/media/images/defaultfeaimg.jpg')"></div>
+              <% } %>
+              </div>
+            <div class="right">
+              <div class="article-title"><%- posts[i].title %></div>
+              <div class="meta">
+                <div class="article-description">
+                  <%- posts[i].abstract %>
+                </div>
+                <div class="date"><%- posts[i].date %></div>
+              </div>
+            </div>
+          </article>
+        </a>
+        <% } %>
+      </div>
+
+      <%- include('./includes/pagination') %>
     </div>
-  </body>
+
+    <%- include('./includes/footer') %>
+  </div>
+</body>
 </html>
