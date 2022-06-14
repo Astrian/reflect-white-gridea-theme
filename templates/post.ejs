@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 
 <head>
-  <%- include('./includes/head', { pageTitle: themeConfig.siteName }) %>
+  <%- include('./includes/head', { pageTitle: `${post.title} - ${themeConfig.siteName}` }) %>
   <%- include('./includes/meta', {
     url: `${themeConfig.domain}${post.link}`,
     title: post.title,
