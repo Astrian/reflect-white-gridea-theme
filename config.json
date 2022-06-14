@@ -22,6 +22,14 @@
       "group": "主题设置",
       "type": "picture-upload",
       "note": "将你的网站主页分享至社交网络时，所显示的默认图片。"
+    },
+    {
+      "name": "tagmeta",
+      "label": "标签元信息组",
+      "group": "主题设置",
+      "type": "textarea",
+      "note": "以 JSON 格式编写的各标签的介绍信息。",
+      "value": "{}"
     }
   ]
 }

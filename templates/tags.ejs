@@ -1,20 +1,35 @@
-<html>
-  <head>
-  <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <%- include('./includes/header') %>
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <%- include('./includes/head', { pageTitle: `标签 - ${themeConfig.siteName}` }) %>
+  <%- include('./includes/meta', {
+    url: `${themeConfig.domain}/tags`,
+    title: "标签",
+    description: `收录于 ${themeConfig.siteName} 过往文章中的所有话题标签。`,
+    cover: "nocover"
+  }) %>
+</head>
+<body>
+  <div class="container">
+    <%- include('./includes/header') %>
 
-        <div class="tags-container">
-          <% tags.forEach((tag) => { %>
-            <a class="tag" href="<%= tag.link %>"><%= tag.name %></a>
-          <% }); %>
-        </div>
-
-        <%- include('./includes/footer') %>
+    <div id="tags">
+      <div class="tags-pagetitle">Tags</div>
+      <% let tagMeta = JSON.parse(site.customConfig.tagmeta ? site.customConfig.tagmeta : '{"生活随想": {"description": "记录生活点滴。"}}') %>
+      <div class="tag-container">
+        <% tags.forEach((tag) => { %>
+          <a href="<%= tag.link %>" class="tag-item">
+            <div class="tag-name">#<%= tag.name %></div>
+            <% if (tagMeta[tag.name]) { %>
+              <div class="tag-description"><%= tagMeta[tag.name] ? tagMeta[tag.name].description : "" %></div>
+            <% } %>
+            <div class="tag-count"><%= tag.count %> 篇文章</div>
+          </a>
+        <% }); %>
       </div>
     </div>
-  </body>
+
+    <%- include('./includes/footer') %>
+  </div>
+</body>
 </html>

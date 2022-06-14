@@ -471,6 +471,41 @@ span.smallcaps {
 	}
 }
 #tags {
+	.tags-pagetitle {
+		font-size: 60px;
+		letter-spacing: 6px;
+		color: rgba(0, 0, 0, 0.6);
+		font-variant-caps: small-caps;
+		font-weight: 100;
+	}
+	.tag-container {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		.tag-item {
+			width: 30%;
+			background-color: rgba(128, 128, 128, 0.05);
+			border-radius: 4px;
+			margin: 10px;
+			padding: 10px;
+			.tag-name {
+				font-size: 28px;
+				color: @color0;
+			}
+			.tag-description {
+				font-size: 16px;
+				color: rgba(0, 0, 0, 0.6);
+			}
+			.tag-count {
+				font-size: 14px;
+				color: rgba(0, 0, 0, 0.4);
+				margin-top: 5px;
+			}
+		}
+	}
+}
+#tag {
 	.tagmeta {
 		margin-bottom: 32px;
 		margin-top: 16px;
