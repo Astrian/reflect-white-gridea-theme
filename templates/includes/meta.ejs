@@ -1,7 +1,24 @@
 <meta property="og:url" content="<%= url %>" />
+<meta property="og:title" content="<%= title %>" />
+<meta property="og:description" content="<%= description.replace(/<\/?[a-zA-Z]+.*?>/g, '') %>" />
+<meta name="description" content="<%= description.replace(/<\/?[a-zA-Z]+.*?>/g, '') %>" />
+<% if (cover !== "nocover") { %>
+  <meta property="og:image" content="<%= cover %>" />
+  <meta name="twitter:image" content="<%= cover %>" />
+<% } else if (themeConfig.socialcover) { %>
+  <meta property="og:image" content="<%= themeConfig.socialcover %>" />
+  <meta name="twitter:image" content="<%= themeConfig.socialcover %>" />
+<% } else { %>
+  <meta property="og:image" content="<%= themeConfig.domain %>/media/images/defaultfeaimg.jpg" />
+  <meta name="twitter:image" content="<%= themeConfig.domain %>/media/images/defaultfeaimg.jpg" />
+<% } %>
+<meta property="og:site_name" content="<%= themeConfig.siteName %>" />
+<link rel="shortcut icon" href="<%= themeConfig.domain %>/favicon.ico">
+<link href="atom.xml" rel="alternate" title="<%= themeConfig.siteName %>" type="application/atom+xml">
 
 <!-- Twitter settings -->
 <% if (site.customConfig.twitter) { %>
   <meta name="twitter:card" content="summary_large_image" />
-<% } %>
+  <meta name="twitter:creator" content="@<%= site.customConfig.twitter %>" />
 
+<% } %>

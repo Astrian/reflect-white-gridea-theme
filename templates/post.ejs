@@ -3,7 +3,12 @@
 
 <head>
   <%- include('./includes/head', { pageTitle: themeConfig.siteName }) %>
-  <%- include('./includes/meta', { url: themeConfig.domain }) %>
+  <%- include('./includes/meta', {
+    url: `${themeConfig.domain}${post.link}`,
+    title: post.title,
+    description: post.abstract,
+    cover: post.feature
+  }) %>
 </head>
 
 <body>

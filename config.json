@@ -15,6 +15,13 @@
       "label": "评论工具代码",
       "group": "主题设置",
       "type": "textarea"
+    },
+    {
+      "name": "socialcover",
+      "label": "社交网络默认图片",
+      "group": "主题设置",
+      "type": "picture-upload",
+      "note": "将你的网站主页分享至社交网络时，所显示的默认图片。"
     }
   ]
 }
