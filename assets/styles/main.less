@@ -391,7 +391,7 @@ a {
 .pagenavi {
   display: flex;
   justify-content: center;
-
+  margin-top: 20px;
   .item {
     color: rgba(0, 0, 50, 0.3);
     letter-spacing: 5px;
@@ -746,6 +746,74 @@ span.smallcaps {
             }
             time {
               display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .archives {
+    .archives-title {
+      font-size: 50px;
+      text-align: center;
+    }
+    .year-session {
+      .year-title {
+        font-size: 30px;
+      }
+      article {
+        .description {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  #tags {
+    .tags-pagetitle {
+      font-size: 50px;
+      text-align: center;
+    }
+    .tag-container {
+      flex-direction: column;
+      .tag-item {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  }
+
+  #tag {
+    .tag-title {
+      font-size: 50px;
+      text-align: center;
+    }
+    .tag-content {
+      a {
+        article {
+          flex-direction: row-reverse;
+          .right {
+            flex: 2;
+            .article-title {
+              font-size: 18px;
+            }
+            .meta {
+              .article-description {
+                font-size: 14px;
+                margin-top: 6px;
+              }
+              .date {
+                display: none;
+              }
+            }
+          }
+          .left {
+            flex: 1;
+            margin: 0px;
+            .featimg {
+              width: 120px;
+              height: 90px;
             }
           }
         }

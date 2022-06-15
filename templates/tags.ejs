@@ -15,6 +15,7 @@
 
     <div id="tags">
       <% let tagMeta = JSON.parse(site.customConfig.tagmeta ? site.customConfig.tagmeta : '{}') %>
+      <div class="tags-pagetitle">Tags</div>
       <div class="tag-container">
         <% tags.forEach((tag) => { %>
           <a href="<%= tag.link %>" class="tag-item">
