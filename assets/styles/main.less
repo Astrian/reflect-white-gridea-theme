@@ -933,6 +933,7 @@ figure {
     .content {
       background-color: @color7;
       transition: all 0.25s;
+      color: @color3; 
       .post {
         blockquote {
           p {
@@ -950,6 +951,28 @@ figure {
           ol {
             li {
               color: @color3;
+            }
+          }
+
+          code {
+            color: @color3;
+          }
+
+          pre {
+            background-color: #378ca35e;
+          }
+
+          strong {
+            color: @color3;
+          }
+
+          a {
+            color: @color5;
+          }
+
+          table {
+            th {
+              color: @color6;
             }
           }
         }
@@ -1064,6 +1087,32 @@ figure {
 
       &:hover {
         color: @color1;
+      }
+    }
+  }
+
+  .archives {
+    .archives-title {
+      color: @color1;
+    }
+    .year-session {
+      border-bottom: rgba(255, 255, 255, 0.4) solid 1px;
+      .year-title {
+        color: rgb(214, 214, 214);
+      }
+      article {
+        .title {
+          color: @color1;
+        }
+        .description {
+          color: @color3;
+        }
+        .date {
+          color: @color3;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
       }
     }
   }
