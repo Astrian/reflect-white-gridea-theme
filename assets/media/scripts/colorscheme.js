@@ -9,22 +9,22 @@ function changeColorScheme(pref) {
   switch (pref) {
     case 'system': {
       let systemColorscheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      if (systemColorscheme === 'dark') document.getElementsByTagName("body")[0].setAttribute("class", "darkscheme")
-      else document.getElementsByTagName("body")[0].setAttribute("class", "" )
+      if (systemColorscheme === 'dark') document.getElementsByTagName("html")[0].setAttribute("class", "darkscheme")
+      else document.getElementsByTagName("html")[0].setAttribute("class", "" )
       document.getElementById('colorSchemeSystem').style['font-weight'] = 'bold'
       document.getElementById('colorSchemeDark').style['font-weight'] = 'normal'
       document.getElementById('colorSchemeLight').style['font-weight'] = 'normal'
       break
     }
     case 'dark': {
-      document.getElementsByTagName("body")[0].setAttribute("class", "darkscheme")
+      document.getElementsByTagName("html")[0].setAttribute("class", "darkscheme")
       document.getElementById('colorSchemeSystem').style['font-weight'] = 'normal'
       document.getElementById('colorSchemeDark').style['font-weight'] = 'bold'
       document.getElementById('colorSchemeLight').style['font-weight'] = 'normal'
       break
     }
     case 'light': {
-      document.getElementsByTagName("body")[0].setAttribute("class", "")
+      document.getElementsByTagName("html")[0].setAttribute("class", "")
       document.getElementById('colorSchemeSystem').style['font-weight'] = 'normal'
       document.getElementById('colorSchemeDark').style['font-weight'] = 'normal'
       document.getElementById('colorSchemeLight').style['font-weight'] = 'bold'

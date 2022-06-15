@@ -20,9 +20,12 @@
 @import url("/assets/webfonts/Montserrat/Montserrat.css");
 @import url("/assets/webfonts/FiraCode/fira_code.css");
 
+html {
+  transition: all 0.25s;
+}
+
 body {
   font-family: 'Montserrat', 'Noto Sans CJK SC', sans-serif;
-  transition: all 0.25s;
 }
 
 .head {
@@ -78,6 +81,7 @@ body {
     margin-top: -140px;
     margin-left: 20%;
     padding-right: 20%;
+    transition: all 0.25s;
 
     .headline {
       font-size: 25px;
@@ -648,6 +652,13 @@ span.smallcaps {
   }
 }
 
+#footer {
+  padding-bottom: 40px;
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
 @media (max-width: 1023px) {
   .container.fluid {
     padding: 0 15px;
@@ -820,6 +831,12 @@ span.smallcaps {
       }
     }
   }
+
+  .darkscheme {
+    .container.fluid .other-posts .other-post {
+      border-top: rgba(255, 255, 255, 0.4) solid 1px;
+    }
+  }
 }
 
 figure {
@@ -854,7 +871,7 @@ figure {
       color: rgba(255, 255, 255, 0.5);
     }
 
-    .main {
+    .post {
       background-color: @color7;
 
       p {
@@ -913,23 +930,27 @@ figure {
       color: rgba(255, 255, 255, 0.4);
     }
 
-    .post {
-      blockquote {
-        p {
-          color: #308396;
-        }
-      }
-
-      .body {
-        ul {
-          li {
-            color: @color3;
+    .content {
+      background-color: @color7;
+      transition: all 0.25s;
+      .post {
+        blockquote {
+          p {
+            color: #308396;
           }
         }
 
-        ol {
-          li {
-            color: @color3;
+        .body {
+          ul {
+            li {
+              color: @color3;
+            }
+          }
+
+          ol {
+            li {
+              color: @color3;
+            }
           }
         }
       }
@@ -972,6 +993,29 @@ figure {
 
   hr {
     border: 0.5px solid rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  .other-posts {
+    .other-post {
+      
+      .item {
+        .body {
+          .articleinfo {
+            .headline {
+              color: @color1;
+            }
+            .digest {
+              color: @color3;
+            }
+            .time {
+              color: @color3;
+            }
+          }
+        }
+      }
+    }
   }
 
   .article {
@@ -982,7 +1026,8 @@ figure {
     }
   }
 
-  .footer {
+  #footer {
+    
     .slogan {
       color: rgba(255, 255, 255, 0.6);
     }
@@ -994,6 +1039,7 @@ figure {
     a {
       color: rgba(255, 255, 255, 0.45);
     }
+    
   }
 
   #likecoinarea {
