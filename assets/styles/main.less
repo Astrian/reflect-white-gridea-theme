@@ -657,6 +657,7 @@ span.smallcaps {
       }
     }
     .article.huge {
+      padding-bottom: 0px;
       .featureimg {
         margin: 0 -15px;
         height: 250px;
@@ -664,8 +665,89 @@ span.smallcaps {
       .row.content {
         padding: 0px;
         margin: 0px;
+        .post {
+          padding: 18px 0;
+        }
         .headline {
           font-size: 25px;
+        }
+      }
+      .post {
+        p {
+          font-size: 16px;
+          line-height: 28px;
+        }
+  
+        h2 {
+          margin-top: 25px;
+          margin-bottom: 10px;
+          font-weight: 400;
+          font-size: 25px;
+        }
+  
+        h3 {
+          margin-top: 28px;
+          font-size: 22px;
+          font-weight: 400;
+        }
+  
+        h4 {
+          font-size: 20px;
+        }
+  
+        .body {
+          ul {
+            padding-left: 14px;
+            margin-left: 3px;
+  
+            li {
+              font-size: 16px;
+              line-height: 28px;
+            }
+          }
+  
+          ol {
+            padding-left: 14px;
+            margin-left: 3px;
+  
+            li {
+              font-size: 16px;
+              line-height: 28px;
+            }
+          }
+        }
+      }
+    }
+    .other-posts {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      .other-post {
+        width: 100%;
+        padding: 10px 0;
+        margin-bottom: 0px;
+        border-top: rgba(0, 0, 0, 0.1) solid 1px;
+        .item .body {
+          display: flex;
+          flex-direction: row-reverse;
+          .featimg {
+            width: 120px;
+            height: 90px;
+            flex: 1;
+          }
+          .articleinfo {
+            flex: 2;
+            margin-right: 5px;
+            .headline {
+              font-size: 16px;
+            }
+            .digest {
+              font-size: 14px;
+              margin-top: 6px;
+            }
+            time {
+              display: none;
+            }
+          }
         }
       }
     }
