@@ -3,6 +3,12 @@ const nodemon = require('gulp-nodemon')
 const browserSync = require('browser-sync').create()
 const less = require('gulp-less')
 
+gulp.task('copy_bulma', () => {
+  return gulp.src('./node_modules/bulma/css/bulma.min.css')
+    .pipe(gulp.dest('./assets/media/bulma'))
+    .pipe(gulp.dest('./media/bulma'))
+})
+
 gulp.task('less', () => {
   return gulp.src('./assets/styles/main.less')
     .pipe(less())
@@ -12,11 +18,6 @@ gulp.task('less', () => {
 gulp.task('copy_media', () => {
   return gulp.src('./assets/media/**/*')
     .pipe(gulp.dest('./media'))
-})
-
-gulp.task('copy_bulma', () => {
-  return gulp.src('./node_modules/bulma/css/bulma.min.css')
-    .pipe(gulp.dest('./media/styles'))
 })
 
 gulp.task('gulp_nodemon', () => {
