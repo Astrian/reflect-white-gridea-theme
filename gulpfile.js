@@ -16,7 +16,7 @@ gulp.task('copy_media', () => {
 
 gulp.task('copy_bulma', () => {
   return gulp.src('./node_modules/bulma/css/bulma.min.css')
-    .pipe(gulp.dest('./styles'))
+    .pipe(gulp.dest('./media/styles'))
 })
 
 gulp.task('gulp_nodemon', () => {
