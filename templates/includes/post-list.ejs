@@ -36,19 +36,19 @@
     <div class="other-posts">
     <% } else { %>
       <div class="other-post">
-        <hr>
         <a href="<%= posts[i].link %>" class="item">
           <div class="body">
-            <div class="articleinfo">
-              <div class="headline"><%= posts[i].title %></div>
-              <div class="digest"><%- posts[i].abstract %></div>
-              <time><%= posts[i].dateFormat %></time>
-            </div>
             <% if (posts[i].feature) { %>
               <div class="featimg" style="background-image: url('<%= posts[i].feature %>')"></div>
             <% } else { %>
               <div class="featimg" style="background-image: url('/media/images/defaultfeaimg.jpg')"></div>
             <% } %>
+            <div class="articleinfo">
+              <div class="headline"><%= posts[i].title %></div>
+              <div class="digest"><%- posts[i].abstract %></div>
+              <time><%= posts[i].dateFormat %></time>
+            </div>
+            <hr>
           </div>
         </a>
       </div>
